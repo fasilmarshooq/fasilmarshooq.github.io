@@ -3,8 +3,10 @@ import styled from "styled-components"
 export const DisplayPic = styled.img`
   border-radius: 50%;
   max-width: 100px;
+  max-height: 100px;
   @media (max-width: 350px) {
     max-width: 50px;
+    max-height: 50px;
   }
 `
 
