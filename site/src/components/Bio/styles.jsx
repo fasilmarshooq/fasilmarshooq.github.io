@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
-export const DisplayPic = styled.img`
-  border-radius: 50%;
+export const DisplayPic = styled.div`
   max-width: 100px;
   max-height: 100px;
+  img {
+    border-radius: 50%;
+  }
   @media (max-width: 350px) {
     max-width: 50px;
     max-height: 50px;

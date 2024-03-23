@@ -1,7 +1,7 @@
 import React from "react"
-import dp from "../../images/dp.jpeg"
 import { StyledBio, DisplayPic, StyledTexts, StyledSocials } from "./styles"
 import Skeleton from "react-loading-skeleton"
+import { StaticImage } from "gatsby-plugin-image"
 
 const socials = {
   github: {
@@ -22,29 +22,11 @@ const socials = {
 }
 
 export const Bio = () => {
-  const [isLoading, setIsLoading] = React.useState(true)
-
-  // React.useEffect(() => {
-  //   const image = new Image()
-  //   image.src = dp
-  //   image.onload = () => {
-  //     setIsLoading(false)
-  //   }
-  // }, [])
-
   return (
     <StyledBio>
-      {/* {isLoading ? (
-        // Show skeleton or loading state
-        <DisplayPicSkeleton />
-      ) : (
-        // Show the image once it's loaded
-        <DisplayPic src={dp} alt="DP" />
-      )} */}
-
-      {<DisplayPic src={dp} alt="DP" /> || (
-        <Skeleton circle={true} height={100} width={100} />
-      )}
+      <DisplayPic>
+        <StaticImage src={"../../images/dp.jpeg"} alt="DP" />
+      </DisplayPic>
 
       <section style={{ marginLeft: "1rem" }}>
         <StyledTexts>
