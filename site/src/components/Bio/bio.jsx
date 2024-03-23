@@ -1,6 +1,5 @@
 import React from "react"
 import { StyledBio, DisplayPic, StyledTexts, StyledSocials } from "./styles"
-import Skeleton from "react-loading-skeleton"
 import { StaticImage } from "gatsby-plugin-image"
 
 const socials = {
