@@ -10,7 +10,7 @@ const socials = {
   },
   linkedin: {
     title: "linkedin",
-    username: `srsmaurya`,
+    username: `fasilmarshooq`,
     url: `https://linkedin.com/in/`,
   },
   email: {
@@ -29,7 +29,9 @@ export const Bio = () => {
 
       <section style={{ marginLeft: "1rem" }}>
         <StyledTexts>
-          <p>I talk about Dotnet, Sql and others</p>
+          <p>
+            I Am a Software Engineer, I talk about tech and other stuffs here
+          </p>
           <p>
             You can follow me on{" "}
             <a href="https://www.linkedin.com/in/fasilmarshooq/">LinkedIn</a>

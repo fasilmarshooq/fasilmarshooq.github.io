@@ -6,22 +6,23 @@ export const DisplayPic = styled.div`
   img {
     border-radius: 50%;
   }
-  @media (max-width: 350px) {
-    max-width: 50px;
-    max-height: 50px;
+  @media (max-width: 768px) {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 10px;
   }
 `
 
-export const StyledBio = styled.section`
+export const StyledBio = styled.div`
   display: flex;
+  align-items: center; // Keeps items aligned at the center vertically
+  justify-content: flex-start; // Aligns items to the start of the container
 
-  align-items: center;
-  margin-left: 2rem;
-  @media (max-width: 550px) {
-    align-items: flex-start;
-  }
-  @media (max-width: 550px) {
-    margin-bottom: 1.5rem;
+  @media (max-width: 768px) {
+    flex-direction: column; // Stacks items vertically on smaller screens
+    align-items: center; // Centers items horizontally in the container
+    justify-content: center; // Adjusts content to be centered vertically, if needed
+    text-align: center; // Centers the text within each child component
   }
 `
 export const StyledTexts = styled.div`
@@ -36,8 +37,12 @@ export const StyledTexts = styled.div`
   p {
     margin-bottom: 1rem;
   }
-  @media (max-width: 550px) {
-    margin-left: 1rem;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
   }
 `
 
@@ -62,7 +67,11 @@ export const StyledSocials = styled.div`
   img:hover {
     transform: scale(1.2);
   }
-  @media (max-width: 550px) {
-    margin-left: 1rem;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 `
