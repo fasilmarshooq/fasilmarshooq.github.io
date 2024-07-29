@@ -1,0 +1,1 @@
+{"version":3,"file":"99717-ada5dc7c8a87360376c8.js","mappings":"sHAAAA,MAAMC,UAAU,SAAWD,MAAMC,UAAU,iBAAiBC,SAAS,Q","sources":["webpack://gatsby-starter-default/./node_modules/prismjs/components/prism-t4-vb.js"],"sourcesContent":["Prism.languages['t4-vb'] = Prism.languages['t4-templating'].createT4('vbnet');\n"],"names":["Prism","languages","createT4"],"sourceRoot":""}
