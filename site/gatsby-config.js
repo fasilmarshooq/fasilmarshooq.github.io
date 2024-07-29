@@ -74,5 +74,23 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `JetBrains Mono\:100,300,400,800`, // Specify the font and weights you need
+        ],
+        display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerMode: "server",
+        analyzerPort: "8010",
+        analyzerHost: "localhost",
+        defaultSizes: "gzip",
+      },
+    },
   ],
 }

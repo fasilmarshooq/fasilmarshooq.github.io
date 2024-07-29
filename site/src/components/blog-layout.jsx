@@ -1,9 +1,6 @@
 import * as React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import * as blogStyles from "./styles/blog.module.css"
-import * as postStyles from "./styles/post.module.css"
-// import "gatsby-prismjs-dracula"
-import Seo from "./seo"
 
 const PostListLayout = () => {
   const data = useStaticQuery(graphql`

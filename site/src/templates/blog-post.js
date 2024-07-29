@@ -6,9 +6,6 @@ import PostLayout from "../components/post-layout"
 import { MDXProvider } from "@mdx-js/react"
 import CodeBlock from "../components/code-block"
 
-// import { propTypes } from "gatsby-plugin-image/dist/src/components/gatsby-image.server"
-
-const shortcodes = {} // Provide common components here
 const components = {
   pre: CodeBlock,
 }
