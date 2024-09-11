@@ -18,7 +18,14 @@ const CodeBlock = ({ children }) => {
       language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style }}>
+        <pre
+          className={className}
+          style={{
+            ...style,
+            whiteSpace: "pre-wrap", // Enable word wrapping
+            wordWrap: "break-word", // Break long words
+          }}
+        >
           {tokens.map((line, index) => (
             <div key={index} {...getLineProps({ line, key: index })}>
               {line.map((token, key) => (

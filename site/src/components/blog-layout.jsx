@@ -4,8 +4,8 @@ import * as blogStyles from "./styles/blog.module.css"
 
 const PostListLayout = () => {
   const data = useStaticQuery(graphql`
-    query GetAllPosts {
-      allMdx {
+    query {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         nodes {
           id
           frontmatter {
