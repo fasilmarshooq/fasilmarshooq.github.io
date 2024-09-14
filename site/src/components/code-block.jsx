@@ -3,6 +3,8 @@ import { Highlight, defaultProps, Prism } from "prism-react-renderer"
 ;(typeof global !== "undefined" ? global : window).Prism = Prism
 
 require("prismjs/components/prism-csharp")
+require("prismjs/components/prism-json")
+require("prismjs/components/prism-bash")
 
 const CodeBlock = ({ children }) => {
   // Extract the className from the code child
@@ -24,6 +26,7 @@ const CodeBlock = ({ children }) => {
             ...style,
             whiteSpace: "pre-wrap", // Enable word wrapping
             wordWrap: "break-word", // Break long words
+            padding: "10px",
           }}
         >
           {tokens.map((line, index) => (
@@ -39,4 +42,19 @@ const CodeBlock = ({ children }) => {
   )
 }
 
-export default CodeBlock
+const InlineCode = ({ children }) => {
+  return (
+    <code
+      style={{
+        backgroundColor: "#2d2d2d",
+        color: "#f8f8f2",
+        padding: "0.2em 0.4em",
+        borderRadius: "3px",
+      }}
+    >
+      {children}
+    </code>
+  )
+}
+
+export { CodeBlock, InlineCode }

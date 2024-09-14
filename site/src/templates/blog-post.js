@@ -4,10 +4,11 @@ import * as postStyles from "../components/styles/post.module.css"
 import PostLayout from "../components/post-layout"
 
 import { MDXProvider } from "@mdx-js/react"
-import CodeBlock from "../components/code-block"
+import { InlineCode, CodeBlock } from "../components/code-block"
 
 const components = {
   pre: CodeBlock,
+  code: InlineCode,
 }
 
 const BlogPostTemplate = ({ data, location, children }) => {
