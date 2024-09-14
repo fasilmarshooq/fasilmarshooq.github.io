@@ -5,6 +5,7 @@ import PostLayout from "../components/post-layout"
 
 import { MDXProvider } from "@mdx-js/react"
 import { InlineCode, CodeBlock } from "../components/code-block"
+import Comments from "../components/Comments/comments"
 
 const components = {
   pre: CodeBlock,
@@ -29,6 +30,7 @@ const BlogPostTemplate = ({ data, location, children }) => {
         itemProp="articleBody"
       >
         <MDXProvider components={components}>{children}</MDXProvider>
+        <Comments />
       </div>
     </PostLayout>
   )
