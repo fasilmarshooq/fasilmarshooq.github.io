@@ -2,6 +2,8 @@ import React from "react"
 import { Highlight, defaultProps, Prism } from "prism-react-renderer"
 import { useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard"
+import { FaCopy, Fa } from "react-icons/fa"
+import { MdOutlineDoneAll } from "react-icons/md"
 ;(typeof global !== "undefined" ? global : window).Prism = Prism
 
 require("prismjs/components/prism-csharp")
@@ -18,7 +20,7 @@ const CodeBlock = ({ children }) => {
 
   const handleCopy = () => {
     setCopied(true)
-    setTimeout(() => setCopied(false), 5000) // Reset after 5 seconds
+    setTimeout(() => setCopied(false), 3000) // Reset after 3 seconds
   }
 
   return (
@@ -41,12 +43,12 @@ const CodeBlock = ({ children }) => {
                 background: copied ? "green" : "grey",
                 color: "white",
                 border: "none",
-                borderRadius: "5px",
-                padding: "4px",
+                borderRadius: "4px",
+                padding: "2px 5px",
                 cursor: "pointer",
               }}
             >
-              {copied ? "Copied!" : "Copy"}
+              {copied ? <MdOutlineDoneAll /> : <FaCopy />}
             </button>
           </CopyToClipboard>
           <pre
