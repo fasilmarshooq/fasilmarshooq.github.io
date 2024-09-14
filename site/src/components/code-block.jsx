@@ -1,5 +1,7 @@
 import React from "react"
 import { Highlight, defaultProps, Prism } from "prism-react-renderer"
+import { useState } from "react"
+import CopyToClipboard from "react-copy-to-clipboard"
 ;(typeof global !== "undefined" ? global : window).Prism = Prism
 
 require("prismjs/components/prism-csharp")
@@ -8,10 +10,16 @@ require("prismjs/components/prism-bash")
 
 const CodeBlock = ({ children }) => {
   // Extract the className from the code child
+  const [copied, setCopied] = useState(false)
   const className = children.props.className || ""
   const language = className.replace(/language-/, "")
 
   if (!language) return children
+
+  const handleCopy = () => {
+    setCopied(true)
+    setTimeout(() => setCopied(false), 5000) // Reset after 5 seconds
+  }
 
   return (
     <Highlight
@@ -20,23 +28,45 @@ const CodeBlock = ({ children }) => {
       language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className={className}
-          style={{
-            ...style,
-            whiteSpace: "pre-wrap", // Enable word wrapping
-            wordWrap: "break-word", // Break long words
-            padding: "10px",
-          }}
-        >
-          {tokens.map((line, index) => (
-            <div key={index} {...getLineProps({ line, key: index })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
+        <div style={{ position: "relative" }}>
+          <CopyToClipboard
+            text={children.props.children.trim()}
+            onCopy={handleCopy}
+          >
+            <button
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: copied ? "green" : "grey",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                padding: "4px",
+                cursor: "pointer",
+              }}
+            >
+              {copied ? "Copied!" : "Copy"}
+            </button>
+          </CopyToClipboard>
+          <pre
+            className={className}
+            style={{
+              ...style,
+              whiteSpace: "pre-wrap", // Enable word wrapping
+              wordWrap: "break-word", // Break long words
+              padding: "10px",
+            }}
+          >
+            {tokens.map((line, index) => (
+              <div key={index} {...getLineProps({ line, key: index })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
       )}
     </Highlight>
   )
