@@ -80,7 +80,7 @@ rm yarn-lock.json
 
 ### Important Note! - Dependencies in PNPM Are Not Hoisted
 
-With npm or Yarn Classic, all packages end up at the root of the node_modules directory. This setup allows your code to access packages that aren't directly listed as dependencies, which can lead to unexpected behavior.
+With npm or Yarn Classic, all packages end up at the root of the `node_modules` directory. This setup allows your code to access packages that aren't directly listed as dependencies, which can lead to unexpected behavior.
 
 PNPM, on the other hand, uses symlinks to place only the project's direct dependencies at the root. This approach keeps your `node_modules` directory clean and organized, ensuring that your project only accesses the dependencies it explicitly declares.
 
