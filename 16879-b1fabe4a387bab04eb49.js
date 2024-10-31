@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[16879],{16879:function(){Prism.languages["t4-vb"]=Prism.languages["t4-templating"].createT4("vbnet")}}]);
+//# sourceMappingURL=16879-b1fabe4a387bab04eb49.js.map
