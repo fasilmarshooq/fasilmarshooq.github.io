@@ -1,0 +1,40 @@
+---
+title: Why Software Engineers Should Brush Up on Physics
+description: A humbling lesson about network latency and the speed of light in distributed systems
+date: 2024-12-19
+tags: ["tech", "distributed-systems", "system-design"]
+---
+
+Last week, our team was deep in the trenches, working on a multi-DC event-driven system designed to power booking searches.
+
+As part of the process, I was testing replication delays between our data centers in Hong Kong and Ashburn. The dashboard proudly displayed a maximum delay of **17ms**.
+
+Cue one of our lead engineers chiming in: "Anything under 100ms is physically impossible."
+
+My confident response? "Trust me, bro." 😅
+
+Then came the mic-drop moment from my director:
+
+> "I trust the speed of light more than you."
+
+**Big facepalm moment.**
+
+## Let's Do the Math
+
+The distance between Hong Kong and Ashburn is about **13,100 km**.
+
+Light travels at **300,000 km/s**.
+
+In theory (vacuum conditions), it would take roughly **45ms** for light to cover that distance.
+
+```
+Distance: 13,100 km
+Speed of light: 300,000 km/s
+Theoretical minimum: 13,100 ÷ 300,000 = 0.044 seconds = 44ms
+```
+
+Add in real-world factors (fiber-optic cables, signal processing delays, and the absence of a magic vacuum tube), and even 45ms is optimistic.
+
+## The Reality Check
+
+So, yeah... that 17ms? Either our dashboard is defying the laws of physics, or we've just rewritten them. (I'll let you guess which.) 😅

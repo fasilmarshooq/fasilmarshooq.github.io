@@ -1,0 +1,77 @@
+---
+title: A Rookie System Designer's Journey - Estimating DB Size
+description: Learning the hard way about PostgreSQL database size estimation at scale
+date: 2024-12-19
+tags: ["tech", "database", "postgresql", "system-design"]
+---
+
+Ever been in the hot seat when a DBA asks, "What's your DB size going to be in a year?" 😎 
+
+At Agoda, we traditionally relied on SQL Server for our app. But let's face it, SQL Server can be a pricey beast. So, we decided to embrace the happy elephant, PostgreSQL. Why? That's a story for another day.
+
+I was tasked with designing a highly scalable, event-driven booking search system. To give you a sense of scale, Agoda processes a few hundred bookings daily (let's assume 200k 😎)—which means a few bookings every second!
+
+Since PostgreSQL was new to our platform, our cautious DBA team didn't want to risk it with a mission-critical service exceeding 300 GB. The burning question: Will my service exceed this limit?
+
+The expectation was to have at least two years' worth of historical booking data ready at launch.
+
+## The ChatGPT Consultation
+
+Like any newbie, I turned to ChatGPT and asked:
+
+> "If my PostgreSQL DB hosts a single table with a max of ten columns, one row per booking, and we get around 200k bookings per day, what's the data size for 2 years?"
+
+ChatGPT's short answer: Yes, it will exceed 300 GB, with each row being 1KB. Yikes, that's hefty!
+
+But wait, how can a single row be 1KB?
+
+## The Initial Calculation
+
+After some digging, I calculated the average row size: 
+- 10 columns total
+- 1 bigint (8 bytes)
+- 3 integers (12 bytes) 
+- 5 timestamps (40 bytes)
+- 1 int[] (assuming an average of 5 ints, 20 bytes)
+
+**Total estimated row size: 80 bytes.**
+
+For two years, that's 146,000,000 rows × 80 bytes/row = **11.68 GB**.
+
+12 GB? Sweet! I got the green light to onboard to PostgreSQL, and my app went live.
+
+## Reality Check
+
+But was I right? After all, I'm a rookie, and it's just me and AI—a perfect evil combo, right? 🤣 
+
+While I wasn't too far off, I revisited the week's data.
+
+The current DB size as I write this is **780 MB** for **5,056,637 rows** (I haven't hydrated the historical data yet). That doesn't add up—5,056,637 rows × 80 bytes should be 404 MB. Why am I off by almost 380 MB, nearly 50% more?
+
+## The Missing Pieces
+
+**Surprise!** The index size is 162 MB, which I didn't factor in. But there are still 220 MB unaccounted for. 
+
+Ah, the average row size turned out to be **130 bytes**. I also overlooked row overhead (fields reserved for transaction management, tuple headers, TOAST), which is a minimum of 30 bytes.
+
+## The Corrected Calculation
+
+Considering these factors, recalculating gives:
+- 146,000,000 rows × 130 bytes/row ≈ **20 GB**
+- Plus 20% for indexes ≈ **24 GB**
+
+That's more than double my initial estimate.
+
+## Lessons Learned
+
+It's been a valuable learning experience for me, and I hope it is for you too.
+
+These basics might just save you from a hefty AWS RDS bill someday.
+
+**Key takeaways:**
+- Always account for row overhead (minimum 30 bytes in PostgreSQL)
+- Don't forget about index storage requirements
+- Real-world row sizes are often larger than theoretical calculations
+- Test with actual data when possible
+
+Comments are most welcome! How do you estimate your DB size? 😁 
