@@ -43,9 +43,11 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        description
         date(formatString: "MMMM DD, YYYY")
         tags
       }
+      excerpt(pruneLength: 160)
     }
   }
 `

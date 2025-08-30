@@ -13,6 +13,7 @@ module.exports = {
     description: `A blog about software development and other cool stuff.`,
     author: `@fasilmarshooq`,
     siteUrl: `https://fasilmarshooq.github.io/`,
+    image: `https://fasilmarshooq.github.io/F.png`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

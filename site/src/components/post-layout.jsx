@@ -11,10 +11,18 @@ const PostLayout = ({
   date,
   tags,
   children,
+  location,
 }) => {
+  const metaDescription = description || "A blog about software development and other cool stuff."
+  
   return (
     <main>
-      <Seo title={title} description={description} />
+      <Seo 
+        title={title} 
+        description={metaDescription} 
+        article={true}
+        pathname={location?.pathname}
+      />
       <BackLink />
       <section className={postStyles.article}>
         <div className={postStyles.articleHeader}>
