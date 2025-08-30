@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import BackLink from "../components/common/BackLink"
+import "../components/styles/blog.module.css"
 
 const AboutContainer = styled.div`
   max-width: 800px;

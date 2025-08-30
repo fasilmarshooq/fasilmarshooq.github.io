@@ -36,11 +36,11 @@ export const HomeLayout = () => {
   return (
     <main>
       <Seo title="Home" />
-      <StyledHeader>
+      {/* <StyledHeader>
         <Link to="/">
           <SiteTitle>Fasil Marshooq</SiteTitle>
         </Link>
-      </StyledHeader>
+      </StyledHeader> */}
       <Bio />
       <PostListLayout />
     </main>
