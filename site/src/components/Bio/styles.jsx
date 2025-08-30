@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const DisplayPic = styled.div`
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
   img {
     border-radius: 50%;
   }
@@ -26,7 +26,7 @@ export const StyledBio = styled.div`
   }
 `
 export const StyledTexts = styled.div`
-  line-height: 1.2rem;
+  line-height: 1.6rem;
   font-weight: 300;
   margin-left: 2rem;
   a {
@@ -35,7 +35,7 @@ export const StyledTexts = styled.div`
   }
 
   p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   @media (max-width: 768px) {
     display: flex;

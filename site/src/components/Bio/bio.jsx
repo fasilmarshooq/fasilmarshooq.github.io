@@ -30,11 +30,10 @@ export const Bio = () => {
       <section style={{ marginLeft: "1rem" }}>
         <StyledTexts>
           <p>
-            I Am a Software Engineer, I talk about tech and other stuffs here
+            Hey, I am Fasil. I write about software engineering and other stuffs here.
           </p>
-          <p>
-            You can follow me on{" "}
-            <a href="https://www.linkedin.com/in/fasilmarshooq/">LinkedIn</a>
+          <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>
+            <a href="/about">You can read more about me here</a>
           </p>
         </StyledTexts>
         <StyledSocials>

@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import * as postStyles from "./styles/post.module.css"
 import Seo from "./seo"
+import BackLink from "./common/BackLink"
 
 const PostLayout = ({
   headerTitle,
@@ -14,11 +15,7 @@ const PostLayout = ({
   return (
     <main>
       <Seo title={title} description={description} />
-      <header>
-        <Link className={postStyles.siteTitle} to="/">
-          {headerTitle}
-        </Link>
-      </header>
+      <BackLink />
       <section className={postStyles.article}>
         <div className={postStyles.articleHeader}>
           <h2 className={postStyles.articleTitle}>{title}</h2>
