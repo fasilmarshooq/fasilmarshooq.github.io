@@ -92,5 +92,12 @@ module.exports = {
         defaultSizes: "gzip",
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/`,
+        createLinkInHead: true,
+      },
+    },
   ],
 }
