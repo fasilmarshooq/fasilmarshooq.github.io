@@ -37,6 +37,9 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="https://fasilmarshooq.github.io/sitemap-index.xml" />
+      <meta name="robots" content="index, follow" />
       {children}
     </>
   )

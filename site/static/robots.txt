@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
+Sitemap: https://fasilmarshooq.github.io/sitemap.xml
 Sitemap: https://fasilmarshooq.github.io/sitemap-index.xml
 
 # Crawl-delay for respectful crawling
