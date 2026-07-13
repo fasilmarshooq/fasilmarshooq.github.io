@@ -10,9 +10,9 @@
 module.exports = {
   siteMetadata: {
     title: `Fasil Marshooq`,
-    description: `A blog about software development and other cool stuff.`,
+    description: `Fasil Marshooq (@fasilmarshooq) is a software engineer writing about software engineering, distributed systems, AI, and developer tools.`,
     author: `@fasilmarshooq`,
-    siteUrl: `https://fasilmarshooq.github.io/`,
+    siteUrl: `https://fasilmarshooq.github.io`,
     image: `https://fasilmarshooq.github.io/F.png`,
   },
   plugins: [
@@ -87,7 +87,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        analyzerMode: "server",
+        analyzerMode: "disabled",
         analyzerPort: "8010",
         analyzerHost: "localhost",
         defaultSizes: "gzip",

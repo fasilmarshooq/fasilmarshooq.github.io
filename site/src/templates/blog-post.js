@@ -6,6 +6,7 @@ import PostLayout from "../components/post-layout"
 import { MDXProvider } from "@mdx-js/react"
 import { InlineCode, CodeBlock } from "../components/code-block"
 import Comments from "../components/Comments/comments"
+import Seo from "../components/seo"
 
 const components = {
   pre: CodeBlock,
@@ -37,6 +38,18 @@ const BlogPostTemplate = ({ data, location, children }) => {
 }
 
 export default BlogPostTemplate
+
+export const Head = ({ data, location }) => {
+  const post = data.mdx
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+      article={true}
+      pathname={location.pathname}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query GetPost($id: String!) {

@@ -24,13 +24,13 @@ export const Bio = () => {
   return (
     <StyledBio>
       <DisplayPic>
-        <StaticImage src={"../../images/dp.jpeg"} alt="DP" />
+        <StaticImage src={"../../images/dp.jpeg"} alt="Fasil Marshooq" />
       </DisplayPic>
 
       <section style={{ marginLeft: "1rem" }}>
         <StyledTexts>
           <p>
-            Hey, I am Fasil. I write about software engineering and other stuffs here.
+            Hey, I am Fasil Marshooq (@fasilmarshooq), a software engineer writing about software engineering, distributed systems, AI, and developer tools.
           </p>
           <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>
             <a href="/about">You can read more about me here</a>

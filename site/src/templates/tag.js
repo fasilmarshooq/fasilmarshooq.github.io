@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import TagLayout from "../components/tag-layout"
 import * as blogStyles from "../components/styles/blog.module.css"
+import Seo from "../components/seo"
 
 const TagIndex = ({ data, pageContext }) => {
   const siteTitle = "Fasil Marshooq"
@@ -43,6 +44,17 @@ const TagIndex = ({ data, pageContext }) => {
 }
 
 export default TagIndex
+
+export const Head = ({ pageContext }) => {
+  const { tag } = pageContext
+  return (
+    <Seo
+      title={`Posts tagged ${tag}`}
+      description={`Software engineering posts by Fasil Marshooq tagged ${tag}.`}
+      pathname={`/tags/${tag}/`}
+    />
+  )
+}
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {

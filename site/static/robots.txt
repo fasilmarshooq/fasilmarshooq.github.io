@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://fasilmarshooq.github.io/sitemap.xml
 Sitemap: https://fasilmarshooq.github.io/sitemap-index.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1

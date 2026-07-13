@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Seo from "../seo"
 import { Bio } from "../Bio/bio"
 import PostListLayout from "../blog-layout"
 import styled from "styled-components"
@@ -35,12 +34,11 @@ const SiteTitle = styled.h1`
 export const HomeLayout = () => {
   return (
     <main>
-      <Seo title="Home" />
-      {/* <StyledHeader>
+      <StyledHeader>
         <Link to="/">
           <SiteTitle>Fasil Marshooq</SiteTitle>
         </Link>
-      </StyledHeader> */}
+      </StyledHeader>
       <Bio />
       <PostListLayout />
     </main>

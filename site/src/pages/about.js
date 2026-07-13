@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import BackLink from "../components/common/BackLink"
@@ -41,10 +40,9 @@ const BioSection = styled.div`
 const AboutPage = () => {
   return (
     <main>
-      <Seo title="About" />
       <AboutContainer>
         <BackLink />
-        <Title>About Me</Title>
+        <Title>About Fasil Marshooq</Title>
         <BioSection>
           <p>
             Now that you already know I'm Fasil and I'm a software engineer, let's get to the fun part.
@@ -77,5 +75,13 @@ const AboutPage = () => {
     </main>
   )
 }
+
+export const Head = () => (
+  <Seo
+    title="About Fasil Marshooq"
+    description="Learn about Fasil Marshooq (@fasilmarshooq), a software engineer in Bangkok working on scalable systems, AI-powered apps, and consulting."
+    pathname="/about/"
+  />
+)
 
 export default AboutPage
