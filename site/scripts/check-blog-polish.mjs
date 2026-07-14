@@ -23,6 +23,25 @@ const checks = [
       text.includes("Read article"),
   },
   {
+    name: "post cards are clickable without breaking nested links",
+    path: "src/components/blog-layout.jsx",
+    test: text =>
+      text.includes("handleCardClick") &&
+      text.includes("data-clickable-card") &&
+      text.includes("data-card-url") &&
+      text.includes("closest(\"a\")") &&
+      text.includes("onKeyDown"),
+  },
+  {
+    name: "post cards expose desktop and mobile affordances",
+    path: "src/components/styles/blog.module.css",
+    test: text =>
+      text.includes("cursor: pointer") &&
+      text.includes(".article:focus-within") &&
+      text.includes(".article:active") &&
+      text.includes("@media (hover: none)"),
+  },
+  {
     name: "article prose uses reading font while code remains monospace",
     path: "src/components/styles/post.module.css",
     test: text =>

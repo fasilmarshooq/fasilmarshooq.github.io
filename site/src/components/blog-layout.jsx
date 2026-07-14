@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, navigate, useStaticQuery } from "gatsby"
 import * as blogStyles from "./styles/blog.module.css"
 
 const PostListLayout = () => {
@@ -29,6 +29,18 @@ const PostListLayout = () => {
     return `${Math.max(1, Math.ceil(wordCount / 220))} min read`
   }
 
+  const handleCardClick = (event, url) => {
+    if (event.target.closest("a")) return
+    navigate(url)
+  }
+
+  const handleCardKeyDown = (event, url) => {
+    if (event.target.closest("a")) return
+    if (event.key !== "Enter" && event.key !== " ") return
+    event.preventDefault()
+    navigate(url)
+  }
+
   return (
     <section className={blogStyles.articles}>
       {nodes.map(post => {
@@ -36,7 +48,16 @@ const PostListLayout = () => {
         const date = post.frontmatter.date
         const excerpt = post.frontmatter.description || post.excerpt
         return (
-          <article className={blogStyles.article} key={post.fields.slug}>
+          <article
+            aria-label={`Open ${title}`}
+            className={blogStyles.article}
+            data-card-url={post.fields.slug}
+            data-clickable-card
+            key={post.fields.slug}
+            onClick={event => handleCardClick(event, post.fields.slug)}
+            onKeyDown={event => handleCardKeyDown(event, post.fields.slug)}
+            tabIndex={0}
+          >
             <div className={blogStyles.articleMeta}>
               <small className={blogStyles.date}>{date}</small>
               <small>{estimateReadTime(post.body)}</small>
