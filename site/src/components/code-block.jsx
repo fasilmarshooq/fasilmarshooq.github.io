@@ -1,9 +1,10 @@
 import React from "react"
-import { Highlight, defaultProps, Prism } from "prism-react-renderer"
+import { Highlight, Prism } from "prism-react-renderer"
 import { useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard"
-import { FaCopy, Fa } from "react-icons/fa"
+import { FaCopy } from "react-icons/fa"
 import { MdOutlineDoneAll } from "react-icons/md"
+import * as postStyles from "./styles/post.module.css"
 ;(typeof global !== "undefined" ? global : window).Prism = Prism
 
 require("prismjs/components/prism-csharp")
@@ -25,29 +26,16 @@ const CodeBlock = ({ children }) => {
 
   return (
     <Highlight
-      {...defaultProps}
       code={children.props.children.trim()}
       language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div style={{ position: "relative" }}>
+        <div className={postStyles.codeBlockShell}>
           <CopyToClipboard
             text={children.props.children.trim()}
             onCopy={handleCopy}
           >
-            <button
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                background: copied ? "green" : "grey",
-                color: "white",
-                border: "none",
-                borderRadius: "4px",
-                padding: "2px 5px",
-                cursor: "pointer",
-              }}
-            >
+            <button className={postStyles.copyButton} type="button">
               {copied ? <MdOutlineDoneAll /> : <FaCopy />}
             </button>
           </CopyToClipboard>
@@ -55,9 +43,7 @@ const CodeBlock = ({ children }) => {
             className={className}
             style={{
               ...style,
-              whiteSpace: "pre-wrap", // Enable word wrapping
-              wordWrap: "break-word", // Break long words
-              padding: "10px",
+              whiteSpace: "pre",
             }}
           >
             {tokens.map((line, index) => (

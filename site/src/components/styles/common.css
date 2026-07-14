@@ -1,21 +1,23 @@
 #md-content a {
-    color: cyan!important;
-    border-bottom: 1px solid cyan!important;
-  }
-  .token.operator {
-    background: transparent!important;
-  }
-  .gatsby-highlight {
-    margin: 3rem 0rem!important;
-  }
-  .gatsby-highlight{
-    padding: 0.5rem!important;
-  }
-  hr {
-      border-top: 2px dashed var(--white-2)!important;
-      border-bottom: none!important;
-      border-left: none!important;
-      border-right: none!important;
-      margin-bottom: 1.75rem!important;
-  }
-  
+  color: var(--accent) !important;
+  border-bottom: 1px solid rgba(61, 217, 214, 0.55) !important;
+}
+
+.token.operator {
+  background: transparent !important;
+}
+
+.gatsby-highlight {
+  max-width: 100%;
+  margin: 2rem 0 !important;
+  padding: 0 !important;
+  overflow-x: auto;
+}
+
+hr {
+  border-top: 2px dashed var(--white-2) !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  margin-bottom: 1.75rem !important;
+}

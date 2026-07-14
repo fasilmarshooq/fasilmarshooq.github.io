@@ -16,8 +16,12 @@ const PostLayout = ({
       <BackLink />
       <section className={postStyles.article}>
         <div className={postStyles.articleHeader}>
-          <h2 className={postStyles.articleTitle}>{title}</h2>
-          <small className={postStyles.date}>{date}</small>
+          <h1 className={postStyles.articleTitle}>{title}</h1>
+          <p className={postStyles.articleDescription}>{description}</p>
+          <div className={postStyles.articleMeta}>
+            <small className={postStyles.date}>{date}</small>
+            <small>Technical note</small>
+          </div>
           <div className={postStyles.tags}>
             {tags?.map((tag, i) => (
               <Link key={i} to={`/tags/${tag}`} className={postStyles.tag}>
@@ -28,8 +32,9 @@ const PostLayout = ({
         </div>
         {children}
       </section>
-      <footer>
-        <p>&copy; {new Date().getFullYear()}</p>
+      <footer className={postStyles.articleFooter}>
+        <Link to="/">Home</Link>
+        <span>&copy; {new Date().getFullYear()} Fasil Marshooq</span>
       </footer>
     </main>
   )

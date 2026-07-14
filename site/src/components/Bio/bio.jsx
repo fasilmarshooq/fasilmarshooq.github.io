@@ -1,5 +1,11 @@
 import React from "react"
-import { StyledBio, DisplayPic, StyledTexts, StyledSocials } from "./styles"
+import {
+  StyledBio,
+  BioContent,
+  DisplayPic,
+  StyledTexts,
+  StyledSocials,
+} from "./styles"
 import { StaticImage } from "gatsby-plugin-image"
 
 const socials = {
@@ -24,15 +30,23 @@ export const Bio = () => {
   return (
     <StyledBio>
       <DisplayPic>
-        <StaticImage src={"../../images/dp.jpeg"} alt="Fasil Marshooq" />
+        <StaticImage
+          src={"../../images/dp.jpeg"}
+          alt="Fasil Marshooq speaking at an event"
+          loading="eager"
+          placeholder="none"
+          imgStyle={{ objectFit: "cover", objectPosition: "50% 38%" }}
+        />
       </DisplayPic>
 
-      <section style={{ marginLeft: "1rem" }}>
+      <BioContent>
         <StyledTexts>
           <p>
-            Hey, I am Fasil Marshooq (@fasilmarshooq), a software engineer writing about software engineering, distributed systems, AI, and developer tools.
+            Hey, I am Fasil Marshooq (@fasilmarshooq), a software engineer
+            writing about software engineering, distributed systems, AI, and
+            developer tools.
           </p>
-          <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>
+          <p className="bio-link">
             <a href="/about">You can read more about me here</a>
           </p>
         </StyledTexts>
@@ -43,6 +57,7 @@ export const Bio = () => {
               target="_blank"
               rel="noreferrer"
               key={i}
+              aria-label={socials[social_id].title}
             >
               <img
                 src={`/icons/${socials[social_id].title}.png`}
@@ -51,7 +66,7 @@ export const Bio = () => {
             </a>
           ))}
         </StyledSocials>
-      </section>
+      </BioContent>
     </StyledBio>
   )
 }
