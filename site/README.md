@@ -2,6 +2,8 @@
 
 A Gatsby-based personal blog built with React and MDX.
 
+Live site: [fasilmarshooq.github.io](https://fasilmarshooq.github.io/)
+
 ## 🚀 Quick Start
 
 ### Prerequisites
