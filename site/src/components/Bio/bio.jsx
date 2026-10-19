@@ -42,7 +42,7 @@ export const Bio = () => {
       <BioContent>
         <StyledTexts>
           <p>
-            Hey, I am Fasil Marshooq (@fasilmarshooq), a software engineer
+            Hey, I am Fasil Marshooq, a software engineer
             writing about software engineering, distributed systems, AI, and
             developer tools.
           </p>
