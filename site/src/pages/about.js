@@ -45,30 +45,58 @@ const AboutPage = () => {
         <Title>About Fasil Marshooq</Title>
         <BioSection>
           <p>
-            Now that you already know I'm Fasil and I'm a software engineer, let's get to the fun part.
+            I’m Fasil, a software engineer from Coimbatore, now based in Bangkok.
           </p>
           <p>
-            I come from Coimbatore - a city in South India known for its calm energy and a knack for producing great inventors and entrepreneurs. It's a place where tradition meets innovation, and I like to think I carry a bit of both wherever I go.
+            At Agoda, I work on engineering tools and AI-powered applications. A
+            lot of my recent work involves AI agents, engineering support, and
+            figuring out how to make these systems useful in production. That
+            includes building the tools around them, evaluating their answers,
+            and investigating why something that worked yesterday has developed a
+            personality today.
           </p>
           <p>
-            These days, you'll find me in the vibrant chaos of Bangkok, helping Agoda transform from a great travel platform into Asia's preferred travel marketplace. (Yes, I get to play with big systems and even bigger ideas.)
+            Before Agoda, I worked at ThoughtWorks and Odessa. My interests span
+            backend development, distributed systems, developer tooling, and
+            running software in production. I enjoy understanding how the pieces
+            fit together, especially when production politely disagrees with the
+            design document.
           </p>
           <p>
-            Before Agoda, I sharpened my engineering chops at ThoughtWorks and Odessa, where I learned that "impossible" is just another way to say "give me a minute."
+            I also co-founded and later exited{" "}
+            <a href="https://dev-bee.com/" target="_blank" rel="noopener noreferrer">
+              DevBee
+            </a>
+            , a software consultancy based in Coimbatore. We helped small and
+            medium businesses build software and improve their existing systems.
+            That experience gave me another perspective on engineering:
+            understanding the problem and the constraints matters as much as
+            choosing the technology.
           </p>
           <p>
-            I also co-founded <a href="https://dev-bee.com/" target="_blank" rel="noopener noreferrer">DevBee</a>, a software consultancy in Coimbatore. We've helped dozens of small and medium businesses embrace digital evolution - sometimes with code, sometimes with caffeine, always with results.
+            This blog is where I share what I learn along the way. You’ll find
+            posts about software engineering, AI, developer tools, and
+            experiments that sometimes end differently from how they started. I
+            try to include what we tried, what the results showed, and what I’d
+            do differently. Some posts are explanations; others are me
+            documenting a lesson before I forget it and learn it again.
           </p>
           <p>
-            Lately, AI - especially GPT - has been my playground. At Agoda, I'm part of the team building AI-powered apps that are changing how people travel. Whether it's integrating smart solutions or experimenting with the latest in generative AI, I love turning cutting-edge tech into real-world impact.
+            I’m still learning, particularly as more of my work takes me into AI
+            and machine learning. Writing helps me organise that learning, and
+            hopefully saves someone else a little time.
           </p>
           <p>
-            <strong>What can I do for you?</strong><br />
-            If you want to scale your systems, integrate AI, or finally get that CI/CD pipeline humming, I'm available for consulting.
+            Away from the keyboard, I’ve also got into running. I’ll be running my
+            first marathon on December 29.
           </p>
           <p>
-            Let's talk tech, business, or the best filter coffee in South India—connect with me on{" "}
-            <a href="https://www.linkedin.com/in/fasilmarshooq/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and let's make your next project a success.
+            If you’d like to discuss engineering or explore working together,
+            you can find me on{" "}
+            <a href="https://www.linkedin.com/in/fasilmarshooq/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            .
           </p>
         </BioSection>
       </AboutContainer>
@@ -79,7 +107,7 @@ const AboutPage = () => {
 export const Head = () => (
   <Seo
     title="About Fasil Marshooq"
-    description="Learn about Fasil Marshooq (@fasilmarshooq), a software engineer in Bangkok working on scalable systems, AI-powered apps, and consulting."
+    description="Learn about Fasil Marshooq, a software engineer from Coimbatore, now based in Bangkok, working on engineering tools, AI agents, and distributed systems."
     pathname="/about/"
   />
 )
